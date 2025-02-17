@@ -1,21 +1,24 @@
 /* General Reset and Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: auto;
+    padding: auto;
+    box-sizing: content-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: url(pexels-prithiviraj-19212126.jpg) no-repeat center center/cover;
+    color: white;
+    text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    height: 200vh;
+    margin: 0;
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     text-align: center;
 }
@@ -29,16 +32,29 @@ header {
     top: 10px;
     right: 20px;
     font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
 
 .video-container {
     position: relative;
     margin-bottom: 40px;
+    width: 100%;
+    height: auto;
 }
 
 video {
     border: 2px solid #333;
     border-radius: 8px;
+    width: 100%; /* Make sure the video element stretches to the container's width */
+    height: 100%; /* Ensure it takes up the full height of its container */
+    object-fit: cover; /* Ensure the video covers the area without distorting */
+    transition: transform 0.3s ease;
+}
+
+
+video:hover {
+    transform: scale(1.05);
 }
 
 .buttons {
@@ -49,16 +65,22 @@ button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+    transform: scale(1.1);
 }
 
 .team {
@@ -70,6 +92,11 @@ button:disabled {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: scale(1.02);
 }
 
 .profile {
@@ -79,12 +106,22 @@ button:disabled {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.profile:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .profile img {
     width: 100%;
     border-radius: 50%;
     height: auto;
+}
+
+.profile p {
+    margin: 5px 0;
+    color: #333;
 }
 
 /* Mobile Responsiveness */
@@ -96,5 +133,16 @@ button:disabled {
 
     .profile {
         width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
