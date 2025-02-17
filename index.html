@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App - Virtual Camera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <header>
+            <h1>Virtual Camera Feed</h1>
+            <div class="date-time" id="dateTime"></div>
+        </header>
+        
+        <div class="video-container">
+            <video id="video" width="100%" controls autoplay></video>
+            <div class="buttons">
+                <button id="startBtn">Start Recording</button>
+                <button id="stopBtn" disabled>Stop Recording</button>
+                <button id="downloadBtn" disabled>Download Video</button>
+            </div>
+        </div>
+        
+        <!-- Team Profiles -->
+        <section class="team">
+            <h2>Team Members</h2>
+            <div class="profile-container">
+                <div class="profile" id="profile1">
+                    <img src="profile1.jpg" alt="Profile 1">
+                    <p>Name: John Doe</p>
+                    <p>Roll No: 12345</p>
+                    <p>Class: 12B</p>
+                </div>
+                <div class="profile" id="profile2">
+                    <img src="profile2.jpg" alt="Profile 2">
+                    <p>Name: Jane Doe</p>
+                    <p>Roll No: 12346</p>
+                    <p>Class: 12B</p>
+                </div>
+                <div class="profile" id="profile3">
+                    <img src="profile3.jpg" alt="Profile 3">
+                    <p>Name: Mike Smith</p>
+                    <p>Roll No: 12347</p>
+                    <p>Class: 12B</p>
+                </div>
+                <div class="profile" id="profile4">
+                    <img src="profile4.jpg" alt="Profile 4">
+                    <p>Name: Emma Brown</p>
+                    <p>Roll No: 12348</p>
+                    <p>Class: 12B</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
